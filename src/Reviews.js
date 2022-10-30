@@ -7,7 +7,30 @@ import people from "./data";
 
 function Reviews() {
   const [index, setIndex] = useState(0);
-  const { id, name, job, image, text } = people[index];
+  const { name, job, image, text } = people[index];
+
+  const checkIndex = (index) => {
+    if (index > people.length - 1) {
+      return 0;
+    }
+    if (index < 0) {
+      return people.length - 1;
+    }
+    return index;
+  };
+  const nextPerson = () => {
+    setIndex((index) => {
+      let newIndex = index + 1;
+      return checkIndex(newIndex);
+    });
+  };
+
+  const prevPerson = () => {
+    setIndex((index) => {
+      let newIndex = index - 1;
+      return checkIndex(newIndex);
+    });
+  };
 
   return (
     <article className={styles.review}>
@@ -21,10 +44,10 @@ function Reviews() {
       <p>{job}</p>
       <p>{text}</p>
       <div>
-        <button onClick={() => setIndex(index - 1)}>
+        <button onClick={prevPerson}>
           <FaChevronLeft />
         </button>
-        <button onClick={() => setIndex(index + 1)}>
+        <button onClick={nextPerson}>
           <FaChevronRight />
         </button>
       </div>
