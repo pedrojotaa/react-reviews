@@ -32,6 +32,14 @@ function Reviews() {
     });
   };
 
+  const randomPerson = () => {
+    let randomIndex = Math.floor(Math.random() * people.length);
+    if (randomIndex === index) {
+      randomIndex = index + 1;
+    }
+    setIndex(checkIndex(randomIndex));
+  };
+
   return (
     <article className={styles.review}>
       <div className={styles.image_container}>
@@ -51,7 +59,7 @@ function Reviews() {
           <FaChevronRight />
         </button>
       </div>
-      <button>suprise me</button>
+      <button onClick={randomPerson}>suprise me</button>
     </article>
   );
 }
