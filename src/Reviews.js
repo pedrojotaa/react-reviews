@@ -1,10 +1,9 @@
-import styles from './Reviews.module.css'
+import styles from "./Reviews.module.css";
 
 import { useState } from "react";
 import { FaChevronLeft, FaChevronRight, FaQuoteRight } from "react-icons/fa";
 
 import people from "./data";
-
 
 function Reviews() {
   const [index, setIndex] = useState(0);
@@ -22,10 +21,10 @@ function Reviews() {
       <p>{job}</p>
       <p>{text}</p>
       <div>
-        <button>
+        <button onClick={() => setIndex(index - 1)}>
           <FaChevronLeft />
         </button>
-        <button>
+        <button onClick={() => setIndex(index + 1)}>
           <FaChevronRight />
         </button>
       </div>

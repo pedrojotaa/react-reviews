@@ -1,12 +1,10 @@
 .review {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 1.5rem 2rem;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  border-radius: 5px;
   background-color: #fff;
-  max-width: 500px;
+  padding: 1.5rem 2rem;
+  border-radius: 5px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: 1s;
+  text-align: center;
 }
 
 .image_container {
@@ -14,6 +12,8 @@
   height: 150px;
   border-radius: 50%;
   position: relative;
+  margin: 0 auto;
+  margin-bottom: 1.5rem;
 }
 
 .image_container::before {
